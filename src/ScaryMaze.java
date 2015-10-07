@@ -1,4 +1,3 @@
-// Copyright Wintriss Technical Schools 2013
 import java.applet.AudioClip;
 import java.awt.Dimension;
 
@@ -14,9 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-/* A basic version of Aaron's scary maze game
- * http://buildsomethingawesome.org/blog/2012/10/27/scary-maze-game/ */
-
 public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 
 	BufferedImage maze;
@@ -24,13 +20,11 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 	final int frameHeight = 600;
 
 	ScaryMaze() throws Exception {
-		// 1. make a maze image, put it with your Java class
-		// http://pixlr.com/editor/
+
 		maze = ImageIO.read(getClass().getResource("maze.jpg"));
-		// 2. set the mouse pointer to the start of your maze using:
+
 		new Robot().mouseMove(55, 75);
 
-		// 3. add a mouse motion listener using:
 		addMouseMotionListener(this);
 
 	}
@@ -40,35 +34,34 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		int mouseX = e.getX();
 		int mouseY = e.getY();
 		int mouseColor = maze.getRGB(mouseX, mouseY);
-		// 4. print the mouseColor variable to see what color the mouse is
-		// touching
+
 		System.out.println(mouseColor);
-		// 5. make a variable to hold the background color.
+
 		int backgroundcolor = -1;
-		// 6. if the mouse falls off the path (if it is on the background)
+
 		if (mouseColor == backgroundcolor) {
-			// call the scare method
+
 			scare();
 		}
-		// 10. if the mouse is on the end color
+
 		int endcolor = -65331;
 		{
-		if (mouseColor == endcolor)	{
-			// pop up a message to tell them they won
-			System.out.println("You Won!");}
+			if (mouseColor == endcolor) {
+
+				System.out.println("You Won!");
+			}
 		}
 	}
 
 	private void scare() {
 		System.out.println("BOO!");
-		// 7. find a scary sound and put it in the "default package" where you
-		// put your maze picture. here are a lot of scary sounds:
-		// http://bit.ly/scary-sounds
-		AudioClip sound = JApplet.newAudioClip(getClass().getResource("ScaryZombie.wav"));
-		// 8. play the scary sound. Hint: type "sound" and then a period.
-sound.play();
-		// 9. use the showScaryImage method to scare your victim!
-showScaryImage("scary image.jpg");
+
+		AudioClip sound = JApplet.newAudioClip(getClass().getResource(
+				"ScaryZombie.wav"));
+
+		sound.play();
+
+		showScaryImage("scary image.jpg");
 	}
 
 	private void showScaryImage(String imageName) {
@@ -102,8 +95,6 @@ showScaryImage("scary image.jpg");
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-
-		// TODO Auto-generated method stub
 
 	}
 

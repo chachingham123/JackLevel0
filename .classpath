@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/Guest/Desktop/gridworld.jar"/>
 	<classpathentry kind="lib" path="/Users/Guest/Desktop/robot.jar"/>
+	<classpathentry kind="lib" path="E:/Standard-Software-master/TeachingKidsProgramming.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

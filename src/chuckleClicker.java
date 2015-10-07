@@ -11,7 +11,7 @@ public class chuckleClicker implements ActionListener{
 	JButton jb1 = new JButton("joke");
 	JButton jb2 = new JButton("punchline");
 	public static void main(String[] args) {
-	 
+	
 	 chuckleClicker chuckle = new chuckleClicker();
 }
 	 
@@ -22,7 +22,7 @@ public class chuckleClicker implements ActionListener{
 void makeButtons()
 {
 	JFrame jf = new JFrame();
-	jf.setVisible(true);
+	jf.setVisible(false);
 	JPanel jp = new JPanel();
 	
 	
@@ -40,15 +40,19 @@ void makeButtons()
 
 @Override
 public void actionPerformed(ActionEvent e) {
-	// TODO Auto-generated method stub
-	//JOptionPane.showMessageDialog(null, "Hi");
+	JOptionPane.showMessageDialog(null, "This game requires 2 people");
+	JOptionPane.showMessageDialog(null, "Chose who will create a joke to tell the other person");
+	String joke = JOptionPane.showInputDialog("Think of a funny joke and put it in here");
+	String answer = JOptionPane.showInputDialog("Now type in the answer to your joke here");
+	makeButtons();
+	
 	if (e.getSource() == jb1) {
-		JOptionPane.showMessageDialog(null, "Why did the chicken cross the road?");
+		JOptionPane.showMessageDialog(null, joke);
 	
 		
 	}
 	if (e.getSource() == jb2) { 
-		JOptionPane.showMessageDialog(null, "To get to the other side.");
+		JOptionPane.showMessageDialog(null, answer);
 		
 	}
 }
